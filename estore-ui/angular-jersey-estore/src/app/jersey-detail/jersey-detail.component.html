@@ -1,0 +1,25 @@
+<div *ngIf="jersey">
+  <h2>{{jersey.name}} Details</h2>
+  <div>
+    <label for="jersey-name">Jersey name: </label>{{jersey.name}}
+    <!--<input id="jersey-name" [(ngModel)]="jersey.name" placeholder="Jersey name">-->
+  </div>
+  <div>
+    <label for="jersey-number">Number: </label>{{jersey.number}}
+  </div>
+  <div>
+    <label for="jersey-price">Price: </label>${{jersey.price}}
+  </div>
+  <div>
+    <label for="jersey-size">Size: </label>{{jersey.size}}
+  </div>
+  <div>
+    <label for="jersey-color">Color: </label>{{jersey.color}}
+  </div>
+  <div>
+    <label for="jersey-quantity">Quantity: </label>{{jersey.quantity}}
+  </div>
+  <button type="button" (click)="goBack()">Back</button>
+  <button type="button" (click)="addToCart()" *ngIf="canAddToCart" [disabled]="jersey.quantity <= 0">Add to Cart</button>
+  <!--<button type="button" (click)="save()">save</button>-->
+</div>

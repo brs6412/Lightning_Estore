@@ -1,0 +1,15 @@
+<h2>Manage Inventory</h2>
+  
+<a routerLink="/inventory/add-jersey" class="link">
+  Add New Jersey
+</a>
+
+  <ul class="inventory">
+    <li *ngFor="let jersey of jerseys">
+      <a routerLink="/edit-jersey/{{jersey.id}}">
+        <span class="badge">{{jersey.id}}</span> {{jersey.name}}
+      </a>
+      <button type="button" class="delete" title="delete jersey"
+        (click)="delete(jersey)">x</button>
+    </li>
+  </ul>

@@ -1,0 +1,53 @@
+<div>
+  <label for="new-jersey">Name: </label>
+  <input id="new-jersey" #jerseyName />
+
+  <label for="new-jersey">Number: </label>
+  <input type="number" min="0" oninput="validity.valid||(value='');" id="new-jersey" #jerseyNumber />
+  <label for="new-jersey">Price: </label>
+  <input type="number" step="0.01" min="0" oninput="validity.valid||(value='');" id="new-jersey" #jerseyPrice />
+  
+  <label for="sizes">Size:</label>
+  <select name="sizes" id="new-jersey" #jerseySize>
+    <option value="SMALL">Small</option>
+    <option value="MEDIUM">Medium</option>
+    <option value="LARGE">Large</option>
+  </select>
+
+  <label for="colors">Color:</label>
+  <select name="colors" id="new-jersey" #jerseyColor>
+    <option value="BLUE">Blue</option>
+    <option value="WHITE">White</option>
+    <option value="BLACK">Black</option>
+  </select>
+
+  <label for="new-jersey">Quantity: </label>
+  <input type="number" step="0.01" min="0" oninput="validity.valid||(value='');" id="new-jersey" #jerseyQuantity />
+  
+  <button type="button" class="add-button" (click)="goBack()">Go Back</button>
+
+  <button type="button" class="add-button" 
+      (click)="add(jerseyName.value, jerseyNumber.value, jerseyPrice.value, jerseySize.value, jerseyColor.value, jerseyQuantity.value);
+          jerseyName.value='';
+          jerseyNumber.value='';
+          jerseyPrice.value='';
+          jerseySize.value='';
+          jerseyColor.value='';
+          jerseyQuantity.value='';
+      ">
+    Add Jersey
+  </button>
+
+</div>
+
+<!-- <button type="button" class="add-button" 
+(click)="add(jerseyName.value, jerseyNumber.value, jerseyPrice.value, jerseySize.value, jerseyColor.value, jerseyQuantity.value);
+    jerseyName.value='';
+    jerseyNumber.value='';
+    jerseyPrice.value='';
+    jerseySize.value='';
+    jerseyColor.value='';
+    jerseyQuantity.value='';
+">
+Add Jersey
+</button> -->

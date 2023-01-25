@@ -1,0 +1,116 @@
+<div id="container">
+    <form>
+        <div id="delivery">
+            <h1>1. Delivery Options</h1>
+            <p>Name</p>
+            <div>
+                <input type="text" name="deliverFirstName" placeholder="First" class="form-control">
+                <input type="text" name="deliverLastName" placeholder="Last" class="form-control">
+            </div>
+            <p>Shipping Address</p>
+            <div>
+                <input type="text" name="address" placeholder="Shipping Address" class="double" required><br>
+                <input type="text" name="city" placeholder="City" required>
+                <label for="state">State</label>
+                <select name="state" id="state" required>
+                    <option value="" disabled selected>  </option>
+                    <option value="AL">AL</option>
+                    <option value="AK">AK</option>
+                    <option value="AR">AR</option>
+                    <option value="AZ">AZ</option>
+                    <option value="CA">CA</option>
+                    <option value="CO">CO</option>
+                    <option value="CT">CT</option>
+                    <option value="DC">DC</option>
+                    <option value="DE">DE</option>
+                    <option value="FL">FL</option>
+                    <option value="GA">GA</option>
+                    <option value="HI">HI</option>
+                    <option value="IA">IA</option>
+                    <option value="ID">ID</option>
+                    <option value="IL">IL</option>
+                    <option value="IN">IN</option>
+                    <option value="KS">KS</option>
+                    <option value="KY">KY</option>
+                    <option value="LA">LA</option>
+                    <option value="MA">MA</option>
+                    <option value="MD">MD</option>
+                    <option value="ME">ME</option>
+                    <option value="MI">MI</option>
+                    <option value="MN">MN</option>
+                    <option value="MO">MO</option>
+                    <option value="MS">MS</option>
+                    <option value="MT">MT</option>
+                    <option value="NC">NC</option>
+                    <option value="NE">NE</option>
+                    <option value="NH">NH</option>
+                    <option value="NJ">NJ</option>
+                    <option value="NM">NM</option>
+                    <option value="NV">NV</option>
+                    <option value="NY">NY</option>
+                    <option value="ND">ND</option>
+                    <option value="OH">OH</option>
+                    <option value="OK">OK</option>
+                    <option value="OR">OR</option>
+                    <option value="PA">PA</option>
+                    <option value="RI">RI</option>
+                    <option value="SC">SC</option>
+                    <option value="SD">SD</option>
+                    <option value="TN">TN</option>
+                    <option value="TX">TX</option>
+                    <option value="UT">UT</option>
+                    <option value="VT">VT</option>
+                    <option value="VA">VA</option>
+                    <option value="WA">WA</option>
+                    <option value="WI">WI</option>
+                    <option value="WV">WV</option>
+                    <option value="WY">WY</option>
+                </select>
+                <input type="text" name="zip" placeholder="Zip Code" required>
+            </div>
+        </div>
+        <div id="payment">
+            <h1>2. Payment</h1>
+            <p>Name on Card</p>
+            <div>
+                <input type="text" name="First" placeholder="First" required/>
+                <input type="text" name="Last" placeholder="Last" required/>
+            </div>
+            <p>Card Number</p>
+            <input type="text" name="card" placeholder="Card Number" class="double" required>
+            <p>Expiration Date</p>
+            <select name="month" id="month" required>
+                <option value="" disabled selected>MM</option>
+                <option value="01">01</option>
+                <option value="02">02</option>
+                <option value="03">03</option>
+                <option value="04">04</option>
+                <option value="05">05</option>
+                <option value="06">06</option>
+                <option value="07">07</option>
+                <option value="08">08</option>
+                <option value="09">09</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            <input type="text" name="year" placeholder="YYYY">
+        </div>
+        <input type="reset" value="Submit">
+    </form>
+
+    <div id="cart">
+        <h1 id="cart-title">In Your Cart</h1>
+        <h3>Subtotal: <span class="totals">${{ cart.total }}.00</span></h3>
+        <h3>Estimated Shipping: <span class="totals">$0.00</span></h3>
+        <h3>Total: <span class="totals">${{ cart.total }}.00</span></h3>
+        <div class="item" *ngFor="let item of cart.items; let i = index">
+            <img alt="Jersey" src="/assets/jersey.png" />
+            <div class="details">
+                <h2>{{ item.jersey.name }}</h2>
+                <p>Price: ${{ item.jersey.price }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div id="browser">
+  <h2>Browse Jerseys</h2>
+  <div id="search-component">
+    <input placeholder="Search..." #searchBox id="search-box" [(ngModel)]="searchTerm" />
+  </div>
+  <div id="jersey-list">
+    <a class="jersey-node" *ngFor="let jersey of jerseys | search: searchTerm" routerLink="/detail/{{jersey.id}}">
+        <div class="jersey-icon">
+          <img alt="Jersey" src="/assets/jersey.png" width="100%" />
+          <div class="jersey-number">{{("" + jersey.number).padStart(2, '0').slice(0, 2)}}</div>
+          <div class="jersey-name">{{jersey.name | slice:0:6}}</div>
+        </div>
+        <p *ngIf="outOfStock(jersey)">
+          <strong>{{jersey.name}}</strong>
+          <br />
+          OUT OF STOCK
+        </p>
+        <p *ngIf="!outOfStock(jersey) && hasLowStock(jersey)">
+          <strong>{{jersey.name}}</strong>
+          <br />
+          ${{jersey.price}} Low in Stock!
+        </p>
+        <p *ngIf="!outOfStock(jersey) && !hasLowStock(jersey)">
+          <strong>{{jersey.name}}</strong>
+          <br />
+          ${{jersey.price}}
+        </p>
+    </a>
+  </div>
+</div>

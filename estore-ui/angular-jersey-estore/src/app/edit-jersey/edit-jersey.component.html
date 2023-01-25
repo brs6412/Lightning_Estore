@@ -1,0 +1,36 @@
+
+<div *ngIf="jersey">
+    <h2>Edit Jersey Details: </h2>
+
+    <div>
+        <label for="jersey-name">Name: </label>
+        <input id="jersey-name" [(ngModel)]="jersey.name" placeholder="Name: ">
+
+        <label for="jersey-number">Number: </label>
+        <input id="jersey-number" [(ngModel)]="jersey.number" placeholder="Number: ">
+
+        <label for="jersey-price">Price: </label>
+        <input id="jersey-price" [(ngModel)]="jersey.price" placeholder="Price: ">
+
+        <label for="colors">Color: </label>
+        <select name="colors" id="change-color" [(ngModel)]="jersey.color" >
+            <option value="BLUE">Blue</option>
+            <option value="WHITE">White</option>
+            <option value="BLACK">Black</option>
+        </select>
+
+        <label for="sizes">Size: </label>
+        <select name="sizes" id="change-size" [(ngModel)]="jersey.size" >
+            <option value="SMALL">Small</option>
+            <option value="MEDIUM">Medium</option>
+            <option value="LARGE">Large</option>
+        </select>
+
+        <label for="quantity">Quantity</label>
+        <input id="change-quantity" type="number" [(ngModel)]="jersey.quantity" placeholder="Quantity ">
+
+    </div>
+
+    <button type="button" (click)="goBack()">Go Back</button>
+    <button type="button" (click)="save()">Save</button>
+</div>

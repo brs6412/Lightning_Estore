@@ -1,0 +1,16 @@
+<header>
+  <img alt="Tampa Bay Lightning Logo" src="/assets/icon.png" />
+  <p>{{title}}</p>
+  <nav>
+    <a routerLink="/browse">Browse</a>
+    
+    <!-- Unsure if we want to allow admins to have access to the cart. -->
+    <a routerLink="/cart" *ngIf="isLoggedIn && !isAdmin">Cart</a>
+
+    <a routerLink="/inventory" *ngIf="isAdmin">Inventory</a>
+    <a routerLink="/login" *ngIf="!isLoggedIn">Login</a>
+    <a *ngIf="isLoggedIn" (click)="logout()">Logout</a>
+  </nav>
+  <p *ngIf="isLoggedIn">Hello, {{currentUser}}</p>
+</header>
+<router-outlet></router-outlet>

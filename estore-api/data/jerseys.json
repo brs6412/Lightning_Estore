@@ -1,0 +1,57 @@
+[{
+    "id": 0,
+    "number": 1,
+    "name": "Gerald",
+    "price": 62.99,
+    "size": "MEDIUM",
+    "color": "BLUE",
+    "quantity": 0
+}, {
+    "id": 1,
+    "number": 2,
+    "name": "Robert",
+    "price": 59.99,
+    "size": "LARGE",
+    "color": "WHITE",
+    "quantity": 10
+}, {
+    "id": 2,
+    "number": 7,
+    "name": "Garth",
+    "price": 70.99,
+    "size": "LARGE",
+    "color": "BLUE",
+    "quantity": 7
+}, {
+    "id": 3,
+    "number": 13,
+    "name": "Wayne",
+    "price": 68.99,
+    "size": "MEDIUM",
+    "color": "WHITE",
+    "quantity": 4
+}, {
+    "id": 4,
+    "number": 22,
+    "name": "Tim",
+    "price": 90.55,
+    "size": "SMALL",
+    "color": "BLACK",
+    "quantity": 2
+}, {
+    "id": 5,
+    "number": 25,
+    "name": "Monty",
+    "price": 75.75,
+    "size": "MEDIUM",
+    "color": "BLUE",
+    "quantity": 3
+}, {
+    "id": 6,
+    "number": 39,
+    "name": "Light",
+    "price": 60.25,
+    "size": "SMALL",
+    "color": "BLACK",
+    "quantity": 4
+}]

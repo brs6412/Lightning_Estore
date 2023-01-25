@@ -1,0 +1,35 @@
+<div id="container">
+
+    <div id="cart">
+
+        <div class="item" *ngFor="let item of cart.items; let i = index">
+            <img alt="Jersey" src="/assets/jersey.png" />
+            <div class="details">
+                <h2>{{ item.jersey.name }}</h2>
+                <p>Price: ${{ item.jersey.price }}</p>
+                <p>Quantity: {{ item.quantity }}</p>
+
+                <button type="button" class="change-quantity" title="Decrease quantity"
+                    (click)="decreaseItemQuantity(item.jersey, itemQuantity.value)">-</button>
+                
+                <input type="text" class="change-quantity" id="quantity" 
+                    [(ngModel)]="item.quantity" min="1" pattern="[0-9]*"
+                    (keydown.enter)="setItemQuantity(item.jersey, itemQuantity.value)" #itemQuantity/>
+
+                <button type="button" class="change-quantity" title="Increase quantity"
+                    (click)="increaseItemQuantity(item.jersey, itemQuantity.value)">+</button>
+
+                    <button type="button" (click)="removeFromCart(item.jersey)">Remove</button>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div id="order">
+        <p><span>Total</span> <span>{{ cart.total | currency:'USD':true: '1.2-2'}}</span></p>
+        <hr />
+        <button *ngIf="canCheckout()" (click)="clearCart();confirmation()">Checkout</button>
+    </div>
+
+</div>
